@@ -4,8 +4,11 @@ public:
         vector<int> res;
         int n = words.size();
         for (int i = 0; i < n; ++i) {
-            if (words[i].find(x) != string::npos) {
-                res.push_back(i);
+            for (char ch : words[i]) {
+                if (ch == x) {
+                    res.push_back(i);
+                    break;
+                }
             }
         }
         return res;
